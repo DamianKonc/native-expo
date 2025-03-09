@@ -1,5 +1,6 @@
 import { type ImageSource } from "expo-image"
 
 export type Props = {
-    imgSource: ImageSource 
+    imgSource: ImageSource;
+    selectedImage?: string
 }

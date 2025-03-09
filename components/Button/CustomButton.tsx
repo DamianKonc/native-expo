@@ -8,14 +8,14 @@ import {
   PrimaryButtonLabel,
   PrimaryStyledButton,
   StyledButton,
-} from "./Button.styled";
-import { Props } from "./Button.types";
+} from "./CustomButton.styled";
+import { Props } from "./CustomButton.types";
 
-const CustomButton = ({ label, theme }: Props) => {
+const CustomButton = ({ label, theme, onPress }: Props) => {
   if (theme === "primary") {
     return (
       <PrimaryButtonContainer>
-        <PrimaryStyledButton onPress={() => alert("You pressed a button")}>
+        <PrimaryStyledButton onPress={onPress}>
           <ButtonIcon name="picture-o" size={18} color="#25292e" />
           <PrimaryButtonLabel>{label}</PrimaryButtonLabel>
         </PrimaryStyledButton>
@@ -24,7 +24,7 @@ const CustomButton = ({ label, theme }: Props) => {
   }
   return (
     <ButtonContainer>
-      <StyledButton>
+      <StyledButton onPress={onPress}>
         <ButtonLabel>{label}</ButtonLabel>
       </StyledButton>
     </ButtonContainer>
