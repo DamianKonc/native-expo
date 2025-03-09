@@ -1,33 +1,35 @@
 import styled from "styled-components/native";
-import { Link } from "expo-router";
+import { Image } from "expo-image";
+import ImageViewer from "@/components/ImageViewer.tsx/ImageViewer";
+import CustomButton from "@/components/Button/Button";
+
+const PlaceholderImage = require("../../assets/images/background-image.png");
 
 export default function Index() {
   return (
-    <Container
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <CustomText>Edit app/index.tsx to edit this screen.</CustomText>
-      <Button href={"/about"}>Go to about screen</Button>
+    <Container>
+      <ImageContainer>
+        <ImageViewer imgSource={PlaceholderImage} />
+      </ImageContainer>
+      <FooterContainer>
+        <CustomButton label="Choose a photo" theme="primary" />
+        <CustomButton label="Use this photo" />
+      </FooterContainer>
     </Container>
   );
 }
 
 const Container = styled.View`
+  flex: 1;
   background-color: #25292e;
   align-items: center;
-  justify-content: center;
 `;
 
-const CustomText = styled.Text`
-  color: #fff;
+const ImageContainer = styled.View`
+  flex: 1;
 `;
 
-const Button = styled(Link)`
-  font-size: 20px;
-  text-decoration-line: underline;
-  color: #fff;
+const FooterContainer = styled.View`
+  flex: ${1 / 3};
+  align-items: center;
 `;
