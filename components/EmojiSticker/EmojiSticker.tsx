@@ -1,4 +1,3 @@
-import { View } from "react-native";
 import React from "react";
 import Animated, {
   useAnimatedStyle,
@@ -6,7 +5,6 @@ import Animated, {
   withSpring,
 } from "react-native-reanimated";
 import { Props } from "./EmojiSticker.types";
-import { Image } from "expo-image";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
 
 const EmojiSticker = ({ imageSize, stickerSource }: Props) => {
