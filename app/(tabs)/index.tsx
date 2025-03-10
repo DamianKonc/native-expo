@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
 import * as ImagePicker from "expo-image-picker";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import ImageViewer from "@/components/ImageViewer/ImageViewer";
 import CustomButton from "@/components/Button/CustomButton";
 import { useState } from "react";
@@ -95,7 +96,7 @@ export default function Index() {
   );
 }
 
-const Container = styled.View`
+const Container = styled(GestureHandlerRootView)`
   flex: 1;
   background-color: #25292e;
   align-items: center;
